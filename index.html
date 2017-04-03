@@ -18,10 +18,17 @@
   <body>
     <h1>Firebase Realtime Collaborative Drawing</h1>
 
-    <div>
+    <div id="drawing-container">
       <canvas id="drawing-canvas" width="480" height="420"></canvas>
+      <div id="color-holder"></div>
     </div>
 
-    <div id="colorholder"></div>
+    <div id="message-container">
+      <div id="messages-div"></div>
+
+      <input type="text" id="name-input" placeholder="Name" />
+      <input type="text" id="message-input" placeholder="Message..." />
+    </div>
+
   </body>
 </html>
