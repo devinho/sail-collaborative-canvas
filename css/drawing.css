@@ -1,9 +1,7 @@
 /* Global */
 body {
   margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 500px;
+  width: 100%;
   background-color: #f8f8f8;
   font-size: 24px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -46,7 +44,12 @@ em {
 
 
 /* Drawing */
-#colorholder {
+#drawing-container {
+  display: inline-block;
+  width: 40vw;
+}
+
+#color-holder {
   width: 480px;
   height: 30px;
   border: 2px solid #424547;
@@ -65,4 +68,29 @@ em {
   margin: 1px;
   display: inline-block;
   border: 3px solid black;
+}
+
+/* Chat */
+#message-container {
+  display: inline-block;
+  width: 40vw;
+}
+
+#messages-div {
+  background-color: white;
+  overflow: auto;
+  height: 230px;
+  width: 100%;
+  padding: 10px;
+  border: 8px solid #424547;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+#name-input {
+  width: 26%;
+}
+
+#message-input {
+  width: 68%;
 }

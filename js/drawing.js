@@ -1,4 +1,7 @@
 $(function() {
+
+  // DRAWING CODE
+
   //Set up some globals
   var pixSize = 8, lastPoint = null, currentColor = "000", mouseDown = 0;
 
@@ -23,7 +26,7 @@ $(function() {
         currentColor = col;
       };
     })());
-    item.appendTo("#colorholder");
+    item.appendTo("#color-holder");
   }
 
   //Keep track of if the mouse is up or down
@@ -79,4 +82,28 @@ $(function() {
   pixelDataRef.on("child_added", drawPixel);
   pixelDataRef.on("child_changed", drawPixel);
   pixelDataRef.on("child_removed", clearPixel);
+
+
+  // CHAT CODE
+
+  // Get a reference to the root of the chat data.
+  var messagesRef = new Firebase("https://cssail-224f6.firebaseio.com/chat");
+
+  // When the user presses enter on the message input, write the message to firebase.
+  $("#message-input").keypress(function (e) {
+    if (e.keyCode == 13) {
+      var name = $("#name-input").val();
+      var text = $("#message-input").val();
+      messagesRef.push({name:name, text:text});
+      $("#message-input").val("");
+    }
+  });
+
+  // Add a callback that is triggered for each chat message.
+  messagesRef.limitToLast(10).on("child_added", function (snapshot) {
+    var message = snapshot.val();
+    $("<div/>").text(message.text).prepend($("<em/>")
+      .text(message.name + ": ")).appendTo($("#messages-div"));
+    $("#messages-div")[0].scrollTop = $("#messages-div")[0].scrollHeight;
+  });
 });
