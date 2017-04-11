@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Firebase Collaborative Drawing Example</title>
+    <title>CS @ ILLINOIS Sail</title>
 
     <!-- Firebase -->
     <script src="https://cdn.firebase.com/js/client/2.0.2/firebase.js"></script>
@@ -13,22 +13,32 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/drawing.css">
+
+    <link rel="icon" type="image/x-icon" href="https://sail.cs.illinois.edu/static/assets/favicon.ico">
   </head>
 
   <body>
-    <h1>Firebase Realtime Collaborative Drawing</h1>
 
-    <div id="drawing-container">
-      <canvas id="drawing-canvas" width="480" height="420"></canvas>
-      <div id="color-holder"></div>
+    <div id="header">
+      <img id="sail-img" src="https://sail.cs.illinois.edu/static/assets/UICS_SAIL_Primary_CS_Flat.png">
+      <h1 id="title">A Collaborative Canvas <span class="sm">by Andy Vuong and Devin Ho</span></h1>
     </div>
 
-    <div id="message-container">
-      <div id="messages-div"></div>
 
-      <input type="text" id="name-input" placeholder="Name" />
-      <input type="text" id="message-input" placeholder="Message..." />
+    <div id="container">
+
+      <div id="drawing-container">
+        <canvas id="drawing-canvas" width="480" height="420"></canvas>
+        <div id="color-holder"></div>
+      </div>
+
+      <div id="message-container">
+        <div id="messages-div"></div>
+
+        <input type="text" id="name-input" placeholder="Name" />
+        <input type="text" id="message-input" placeholder="Message" />
+        <div id="button-input">SUBMIT</div>
+      </div>
     </div>
-
   </body>
 </html>
