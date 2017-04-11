@@ -99,6 +99,13 @@ $(function() {
     }
   });
 
+  $("#button-input").on("click", function(e) {
+    var name = $("#name-input").val();
+    var text = $("#message-input").val();
+    messagesRef.push({name:name, text:text});
+    $("#message-input").val("");
+  });
+
   // Add a callback that is triggered for each chat message.
   messagesRef.limitToLast(10).on("child_added", function (snapshot) {
     var message = snapshot.val();

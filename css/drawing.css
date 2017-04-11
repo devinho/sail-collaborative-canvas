@@ -1,33 +1,24 @@
 /* Global */
+
 body {
-  margin-top: 10px;
   width: 100%;
-  background-color: #f8f8f8;
-  font-size: 24px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #424547;
+  padding: 50px 0;
+  background-color: #1DAEED;
   text-align: center;
+  font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #424547;
 }
 
 h1 {
   font-size: 36px;
-  font-weight: bold;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #424547;
-}
-
-h3 {
-  font-size: 24px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #424547;
-}
-
-p {
- font-size: 16px;
+  color: white;
+  display: inline-block;
+  font-weight: 400;
 }
 
 input {
-  font-size: 24px;
+  padding: 5px;
+  font-size: 16px;
 }
 
 input[type=text] {
@@ -38,28 +29,48 @@ input[type=text] {
 
 em {
   font-style: normal;
-  font-weight: bold;
   color: black;
 }
 
+.sm {
+  font-size: 0.8rem;
+}
+
+/* Header */
+
+#header {
+
+}
+
+#title {
+  position: relative;
+  top: -85px;
+}
+
+#sail-img {
+  margin: 0 20px;
+  width: 25%;
+}
+
+#container {
+
+}
 
 /* Drawing */
 #drawing-container {
   display: inline-block;
+  vertical-align: top;
   width: 40vw;
 }
 
 #color-holder {
   width: 480px;
   height: 30px;
-  border: 2px solid #424547;
-  margin-top: 5px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 5px auto 0 auto;
 }
 
 #drawing-canvas {
-  border: 3px solid #999
+  background-color: white;
 }
 
 .colorbox {
@@ -67,30 +78,48 @@ em {
   height: 22px;
   margin: 1px;
   display: inline-block;
-  border: 3px solid black;
+  border: 3px solid white;
 }
 
 /* Chat */
 #message-container {
   display: inline-block;
+  vertical-align: top;
+  text-align: left;
   width: 40vw;
 }
 
 #messages-div {
+  box-sizing: border-box;
   background-color: white;
-  overflow: auto;
-  height: 230px;
+  height: 420px;
   width: 100%;
   padding: 10px;
-  border: 2px solid #424547;
   margin-bottom: 5px;
   text-align: left;
 }
 
 #name-input {
-  width: 26%;
+  width: 20%;
 }
 
 #message-input {
-  width: 68%;
+  width: 55%;
+}
+
+#button-input {
+  display: inline-block;
+  width: 20%;
+  padding: 5px;
+  background-color: #E35531;
+  cursor: hand;
+
+  font-style: "Gotham-Medium", sans-serif;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+#button-input:hover {
+  background-color: #FC7303;
 }
