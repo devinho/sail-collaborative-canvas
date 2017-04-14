@@ -32,14 +32,15 @@ em {
   color: black;
 }
 
-.sm {
-  font-size: 0.8rem;
-}
-
-/* Header */
+/* ********* */
 
 #header {
 
+}
+
+#sail-img {
+  margin: 0 20px;
+  width: 25%;
 }
 
 #title {
@@ -47,10 +48,11 @@ em {
   top: -85px;
 }
 
-#sail-img {
-  margin: 0 20px;
-  width: 25%;
+.sm {
+  font-size: 0.8rem;
 }
+
+/* ********* */
 
 #container {
 
