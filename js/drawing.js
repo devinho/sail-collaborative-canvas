@@ -17,23 +17,28 @@ $(function() {
   }
 
   //Setup each color palette & add it to the screen
+  // *---
   var colors = ["fff","000","f00","0f0","00f","88f","f8d","f88","f05","f80","0f8","cf0","08f","408","ff8","8ff"];
   for (c in colors) {
     var item = $("<div/>").css("background-color", "#" + colors[c]).addClass("colorbox");
+  // --*
     item.click((function () {
       var col = colors[c];
       return function () {
         currentColor = col;
       };
     })());
+
     item.appendTo("#color-holder");
   }
 
   //Keep track of if the mouse is up or down
+  // *---
   myCanvas.onmousedown = function () {mouseDown = 1;};
   myCanvas.onmouseout = myCanvas.onmouseup = function () {
     mouseDown = 0, lastPoint = null;
   };
+  // --*
 
   //Draw a line from the mouse's last position to its current position
   var drawLineOnMouseMove = function(e) {
@@ -64,8 +69,11 @@ $(function() {
     }
     lastPoint = [x1, y1];
   }
+
+  // *--
   $(myCanvas).mousemove(drawLineOnMouseMove);
   $(myCanvas).mousedown(drawLineOnMouseMove);
+  // --*
 
   // Add callbacks that are fired any time the pixel data changes and adjusts the canvas appropriately.
   // Note that child_added events will be fired for initial pixel data as well.
@@ -83,27 +91,30 @@ $(function() {
   pixelDataRef.on("child_changed", drawPixel);
   pixelDataRef.on("child_removed", clearPixel);
 
+  // --*
 
   // CHAT CODE
 
   // Get a reference to the root of the chat data.
+// *****
   var messagesRef = new Firebase("https://cssail-224f6.firebaseio.com/chat");
 
-  // When the user presses enter on the message input, write the message to firebase.
-  $("#message-input").keypress(function (e) {
-    if (e.keyCode == 13) {
-      var name = $("#name-input").val();
-      var text = $("#message-input").val();
-      messagesRef.push({name:name, text:text});
-      $("#message-input").val("");
-    }
-  });
-
-  $("#button-input").on("click", function(e) {
+  function submitChat () {
     var name = $("#name-input").val();
     var text = $("#message-input").val();
     messagesRef.push({name:name, text:text});
     $("#message-input").val("");
+  }
+
+  // When the user presses enter on the message input, write the message to firebase.
+  $("#message-input").keypress(function (e) {
+    if (e.keyCode == 13) {
+      submitChat();
+    }
+  });
+
+  $("#button-input").on("click", function(e) {
+    submitChat();
   });
 
   // Add a callback that is triggered for each chat message.
