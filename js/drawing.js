@@ -18,7 +18,7 @@ $(function() {
 
   // Part 1 /////////////////////////////////////////////////////////////////////////
 
-  //Setup each color palette & add it to the screen
+  // Setup each color palette & add it to the screen
 
   // var colors = ["fff","000","f00","0f0","00f","88f","f8d","f88","f05","f80","0f8","cf0","08f","408","ff8","8ff"];
 
@@ -51,7 +51,7 @@ $(function() {
     lastPoint = null; // ignore this line!
   };
 
-  // Part 2 ensureD ////////////////////////////////////////////////////////////////////////
+  // Part 2 END ////////////////////////////////////////////////////////////////////////
 
   //Draw a line from the mouse's last position to its current position
   var drawLineOnMouseMove = function(e) {
