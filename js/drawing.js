@@ -86,8 +86,8 @@ $(function() {
 
   // Part 3 ////////////////////////////////////////////////////////////////////////
 
-  // $(myCanvas).mousemove(drawLineOnMouseMove);
-  // $(myCanvas).mousedown(drawLineOnMouseMove);
+  $(myCanvas).mousemove(drawLineOnMouseMove);
+  $(myCanvas).mousedown(drawLineOnMouseMove);
 
   var drawPixel = function(snapshot) {
     var coords = snapshot.key().split(":");
