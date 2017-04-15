@@ -101,14 +101,26 @@ $(function() {
 
   }
 
-  pixelDataRef.on("child_added", drawPixel);
-  pixelDataRef.on("child_changed", drawPixel);
-  pixelDataRef.on("child_removed", clearPixel);
-
   // Part 3 END ////////////////////////////////////////////////////////////////////////
 
   // Get a reference to the root of the chat data.
   var messagesRef = new Firebase("https://cssail-224f6.firebaseio.com/chat");
+
+  // Part 4 ////////////////////////////////////////////////////////////////////////
+  function submitChat() {
+    // todo
+  }
+
+  $("#message-input").keypress(function (e) {
+    // todo
+  });
+
+  $("#button-input").on("click", function(e) {
+    // todo
+  });
+
+  // Part 4 END ////////////////////////////////////////////////////////////////////////
+
   // Add a callback that is triggered for each chat message.
   messagesRef.limitToLast(10).on("child_added", function (snapshot) {
     var message = snapshot.val();
@@ -117,8 +129,4 @@ $(function() {
     $("#messages-div")[0].scrollTop = $("#messages-div")[0].scrollHeight;
   });
 
-  // Part 4 ////////////////////////////////////////////////////////////////////////
-
-
-  // Part 4 END ////////////////////////////////////////////////////////////////////////
 });
