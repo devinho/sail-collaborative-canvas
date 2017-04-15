@@ -20,3 +20,7 @@
 * 10-20: Simple JavaScript, CSS, HTML primer 
 * 20-55: Walk through building the final app together (with one person going around)
 * 55-60: Play around with the final product!
+
+[Hosted demo](http://devinho.me/sail-collaborative-canvas/)
+
+[Image for header](https://sail.cs.illinois.edu/static/assets/UICS_SAIL_Primary_CS_Flat.png)
