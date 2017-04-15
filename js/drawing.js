@@ -3,7 +3,7 @@ $(function() {
   // DRAWING CODE
 
   //Set up some globals
-  var pixSize = 8, lastPoint = null, currentColor = "000", mouseDown = 0;
+  var pixSize = 8, lastPoint = null, currentColor = "000", mouseDown = false;
 
   //Create a reference to the pixel data for our drawing.
   var pixelDataRef = new Firebase("https://cssail-224f6.firebaseio.com/drawing");
@@ -34,9 +34,11 @@ $(function() {
 
   //Keep track of if the mouse is up or down
   // *---
-  myCanvas.onmousedown = function () {mouseDown = 1;};
+  myCanvas.onmousedown = function () {
+    mouseDown = true;
+  };
   myCanvas.onmouseout = myCanvas.onmouseup = function () {
-    mouseDown = 0, lastPoint = null;
+    mouseDown = false, lastPoint = null;
   };
   // --*
 
@@ -73,7 +75,6 @@ $(function() {
   // *--
   $(myCanvas).mousemove(drawLineOnMouseMove);
   $(myCanvas).mousedown(drawLineOnMouseMove);
-  // --*
 
   // Add callbacks that are fired any time the pixel data changes and adjusts the canvas appropriately.
   // Note that child_added events will be fired for initial pixel data as well.
