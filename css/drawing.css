@@ -97,6 +97,7 @@ em {
   padding: 10px;
   margin-bottom: 5px;
   text-align: left;
+  overflow-y: scroll;
 }
 
 #name-input {
