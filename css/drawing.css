@@ -32,31 +32,11 @@ em {
   color: black;
 }
 
-/* ********* */
+/* Header */
 
-#header {
 
-}
+/* Code goes here */
 
-#sail-img {
-  margin: 0 20px;
-  width: 25%;
-}
-
-#title {
-  position: relative;
-  top: -85px;
-}
-
-.sm {
-  font-size: 0.8rem;
-}
-
-/* ********* */
-
-#container {
-
-}
 
 /* Drawing */
 #drawing-container {
